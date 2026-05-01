@@ -3,12 +3,24 @@
     "displayName": "CMM Language Support",
     "description": "Adds syntax highlighting for CMM files.",
     "version": "0.0.1",
+    "publisher": "cfaber-ampere",
     "engines": {
-        "vscode": "^1.0.0"
+        "vscode": "^1.80.0"
     },
     "categories": [
         "Programming Languages"
     ],
+    "keywords": [
+        "cmm",
+        "trace32",
+        "debugger",
+        "syntax",
+        "language"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cfaber-ampere/cmm-language-support.git"
+    },
     "contributes": {
         "languages": [
             {

@@ -32,7 +32,7 @@
       "patterns": [
         { "name": "constant.numeric.hex.cmm", "match": "\\b0x[0-9A-Fa-f]+\\b" },
         { "name": "constant.numeric.binary.cmm", "match": "\\b0y[01]+\\b" },
-        { "name": "constant.numeric.decimal.cmm", "match": "\\b\\d+\\.\\b" },
+        { "name": "constant.numeric.decimal.cmm", "match": "\\b\\d+\\.\\d+\\b" },
         { "name": "constant.numeric.integer.cmm", "match": "\\b\\d+\\b" }
       ]
     },
