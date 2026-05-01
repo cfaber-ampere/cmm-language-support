@@ -1,0 +1,99 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "CMM",
+  "scopeName": "source.cmm",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#macros" },
+    { "include": "#keywords" },
+    { "include": "#labels" },
+    { "include": "#booleans" },
+    { "include": "#operators" },
+    { "include": "#functions" },
+    { "include": "#fileDescriptors" },
+    { "include": "#attributesSwitches" },
+    { "include": "#addressesRanges" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        { "name": "comment.line.semicolon.cmm", "match": ";.*$" },
+        { "name": "comment.line.double-slash.cmm", "match": "//.*$" }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        { "name": "string.quoted.double.cmm", "begin": "\"", "end": "\"", "patterns": [{"match": "\\\\."}] }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        { "name": "constant.numeric.hex.cmm", "match": "\\b0x[0-9A-Fa-f]+\\b" },
+        { "name": "constant.numeric.binary.cmm", "match": "\\b0y[01]+\\b" },
+        { "name": "constant.numeric.decimal.cmm", "match": "\\b\\d+\\.\\b" },
+        { "name": "constant.numeric.integer.cmm", "match": "\\b\\d+\\b" }
+      ]
+    },
+    "macros": {
+      "patterns": [
+        { "name": "variable.other.macro.cmm", "match": "&[A-Za-z_][A-Za-z0-9_]*" }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        { "name": "keyword.control.cmm", "match": "\\b(IF|ELSE|WHILE|RePeaT|GOSUB|RETURN|RETURNVALUES|GOTO|JUMPTO|DO|RUN|ENDDO|END|STOP|CONTinue|SUBROUTINE)\\b" },
+        { "name": "keyword.declaration.cmm", "match": "\\b(LOCAL|GLOBAL|PRIVATE|ENTRY|PARAMETERS)\\b" },
+        { "name": "keyword.io.cmm", "match": "\\b(PRINT|PRINTF|ECHO|SPRINTF|OPEN|CLOSE|READ|WRITE|WRITEB|APPEND|ENTER|INKEY)\\b" },
+        { "name": "keyword.gui.cmm", "match": "\\b(AREA\\.Create|AREA\\.Select|AREA\\.view|AREA\\.RESet|WinPOS|WinCLEAR|WinExt|WinResist)\\b" },
+        { "name": "keyword.debug.pbreak.cmm", "match": "\\b(PBREAK\\.Set|PBREAK\\.Delete|PBREAK\\.ENable|PBREAK\\.DISable|PBREAK\\.List|PBREAK\\.RESet|PBREAK\\.ON|PBREAK\\.OFF)\\b" },
+        { "name": "keyword.debug.pstep.cmm", "match": "\\b(PSTEP|PSTEPOVER|PSTEPOUT|PLIST|PSKIP|PEDIT)\\b" },
+        { "name": "keyword.debug.pmacro.cmm", "match": "\\b(PMACRO\\.list|PMACRO\\.EXPLICIT|PMACRO\\.IMPLICIT|PMACRO\\.IMPLICITPRIVATE|PMACRO\\.LOCK|PMACRO\\.UNLOCK|PMACRO\\.RESet)\\b" },
+        { "name": "keyword.screen.cmm", "match": "\\b(SCREEN\\.ALways|SCREEN\\.display|SCREEN\\.OFF|SCREEN\\.ON|SCREEN\\.WAIT)\\b" },
+        { "name": "keyword.event.cmm", "match": "\\b(ON|GLOBALON)\\b" },
+        { "name": "keyword.encryption.cmm", "match": "\\b(DECRYPT|ENCRYPT|DODECRYPT|ENCRYPTDO|ENCRYPTPER)\\b" },
+        { "name": "keyword.other.cmm", "match": "\\b(BEEP|WAIT)\\b" }
+      ]
+    },
+    "labels": {
+      "patterns": [
+        { "name": "entity.name.function.label.cmm", "match": "^[A-Za-z_][A-Za-z0-9_]*:" }
+      ]
+    },
+    "booleans": {
+      "patterns": [
+        { "name": "constant.language.boolean.cmm", "match": "\\b(TRUE\\(\\)|FALSE\\(\\))\\b" }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        { "name": "keyword.operator.comparison.cmm", "match": "==|!=|<=|>=|<|>" },
+        { "name": "keyword.operator.logical.cmm", "match": "&&|\\|\\||!" },
+        { "name": "keyword.operator.arithmetic.cmm", "match": "\\+|-|\\*|/" }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        { "name": "support.function.builtin.cmm", "match": "\\b(STATE\\.RUN\\(\\)|FILE\\.EOF\\(\\)|FILE\\.EOFLASTREAD\\(\\)|FOUND\\(\\)|DATE\\.TIME\\(\\)|DATE\\.UnixTime\\(\\))\\b" }
+      ]
+    },
+    "fileDescriptors": {
+      "patterns": [
+        { "name": "variable.language.file-descriptor.cmm", "match": "#\\d+" }
+      ]
+    },
+    "attributesSwitches": {
+      "patterns": [
+        { "name": "storage.modifier.attribute.cmm", "match": "/(Read|Write|Create|Append|Binary)|%(LINE|CONTinue|Byte|Word|Long|BE|LE|attr|format)\\b" }
+      ]
+    },
+    "addressesRanges": {
+      "patterns": [
+        { "name": "constant.other.address.cmm", "match": "\\b([PA]:)?0x[0-9A-Fa-f]+\\b" },
+        { "name": "constant.other.range.cmm", "match": "\\b0x[0-9A-Fa-f]+--0x[0-9A-Fa-f]+\\b" },
+        { "name": "constant.other.range.cmm", "match": "\\b0x[0-9A-Fa-f]+\\+\\+0x[0-9A-Fa-f]+\\b" }
+      ]
+    }
+  }
+}
