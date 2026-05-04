@@ -32,12 +32,11 @@ Commands:
   - Windows/Linux: Ctrl+Shift+P
   - macOS: Cmd+Shift+P
 - Run: “Extensions: Install from Location…”
-- When prompted, select the folder you just cloned (e.g., ~/.vscode/extensions/cmm-language-support).
+- When prompted, select the folder you just cloned (e.g., ~/.vscode/extensions/faberc.cmm-language-support).
 - Reload VS Code if prompted.
 
 Notes:
 - If you don’t see “Install from Location…”, type “install from” in the Command Palette to find the exact command in your VS Code version.
-- If this repository requires a build step, run it in the cloned folder before installing (for example, install dependencies and build if package.json defines them).
 
 ## Features
 
